@@ -38,4 +38,9 @@ public class Fireball : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
+
+    void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        Destroy(gameObject);
+    }
 }
