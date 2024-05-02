@@ -19,13 +19,19 @@ public class Target : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        var position = new Vector3( Random.Range(0, 10),0,Random.Range(0, 10));
+        /*var position = new Vector3( Random.Range(0, 10),0,Random.Range(0, 10));
         Instantiate(targetPrefab, transform.position, Quaternion.identity);
+        */
         string tag = collision2D.gameObject.tag;
-        if(tag == "Fireball"){
-            Destroy(gameObject);
-            Debug.Log("Daaaaa");
+        if (tag == "Player")
+        {
+           return;
         }
-        
+           Destroy(gameObject);
+           float x = Random.Range(-9, 9);
+           float y = Random.value * 10 - 5;
+           Instantiate(targetPrefab, new Vector3(x, y, 0), Quaternion.identity);
+           Destroy(gameObject);
+
     }
 }

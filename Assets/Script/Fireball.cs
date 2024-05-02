@@ -22,7 +22,7 @@ public class Fireball : MonoBehaviour
                 movement = Vector3.right; break;
             case 180:
                 movement = Vector3.right; break;
-            case 270:
+            case 260:
                 movement = Vector3.right; break;
 
         }
@@ -41,6 +41,11 @@ public class Fireball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
+        string tag = collision2D.gameObject.tag;
+        if (tag == "Player")
+        {
+            return;
+        }
         Destroy(gameObject);
     }
 }

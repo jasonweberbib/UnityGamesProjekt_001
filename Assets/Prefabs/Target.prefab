@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6868829907971175979}
   - component: {fileID: 7703495810556386585}
   - component: {fileID: 4329452725387654615}
-  - component: {fileID: 1213481445528806756}
   - component: {fileID: 1167571613209493166}
   m_Layer: 0
   m_Name: Target
@@ -99,22 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427b5386d0602d84799ecef413330c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   targetPrefab: {fileID: 6319767753763361345}
---- !u!114 &1213481445528806756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6319767753763361345}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 427b5386d0602d84799ecef413330c0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetPrefab: {fileID: 0}
 --- !u!58 &1167571613209493166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +128,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
