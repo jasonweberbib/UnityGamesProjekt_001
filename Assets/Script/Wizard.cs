@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,8 +17,15 @@ public class Wizard : MonoBehaviour
     private Animator animator;
 
     // Cavnvas Statts
-    float health;
-    float mana;
+    public static int health;
+    public static int mana;
+
+    public TMP_Text healthText;
+    public TMP_Text manaText;
+
+
+    
+    
 
     // Start is called before the first frame update
     void Start()

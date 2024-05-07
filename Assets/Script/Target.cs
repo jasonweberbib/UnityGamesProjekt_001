@@ -27,10 +27,12 @@ public class Target : MonoBehaviour
         {
            return;
         }
-           Destroy(gameObject);
            float x = Random.Range(-9, 9);
            float y = Random.value * 10 - 5;
            Instantiate(targetPrefab, new Vector3(x, y, 0), Quaternion.identity);
+        // erhöung von scoreinnerhalb der Hub skript
+           hub.score += 1;
+        // Targent wird zerstört
            Destroy(gameObject);
 
     }
