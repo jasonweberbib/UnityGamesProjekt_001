@@ -15,6 +15,10 @@ public class Wizard : MonoBehaviour
     Vector3 lastMovement = Vector3.zero;
     private Animator animator;
 
+    // Cavnvas Statts
+    float health;
+    float mana;
+
     // Start is called before the first frame update
     void Start()
     {
