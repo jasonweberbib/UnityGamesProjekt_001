@@ -12,8 +12,8 @@ public class Wizard : MonoBehaviour
     //Refrenc to fireballPrefab
     public GameObject fireballPrefab;
     // Valuse for Fireball Stamina / Firerate
-    private float fireRate = 0.7f;
-    private float canFire = -1f;
+    public float fireRate;
+    public float canFire;
 
     //
     Vector3 movement = Vector3.zero;
