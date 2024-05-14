@@ -22,7 +22,7 @@ public class Fireball : MonoBehaviour
                 movement = Vector3.right; break;
             case 180:
                 movement = Vector3.right; break;
-            case 260:
+            case 270:
                 movement = Vector3.right; break;
 
         }
