@@ -25,6 +25,11 @@ public class hub : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Wizard player = Wizard.player;
         scoreText.text = "Score: " + score;
+        healthText.text = "Health: " + player.stats.health;
+        manaText.text = "Mana: " + player.stats.mana;
+        levelText.text = "Level: " + player.stats.level;
+
     }
 }

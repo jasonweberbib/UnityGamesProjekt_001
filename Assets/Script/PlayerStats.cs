@@ -8,10 +8,10 @@ public class PlayerStats
     public float movement = 1.5f;
 
     // How much Health does the Wizard 
-    public float health = 100.0f;
+    public int health = 100;
 
     // What Level is the Wizard
-    public int level = 0;
+    public int level = 1;
 
     // How fast can the Wizard fire
     public float fireRate = 0.7f;
@@ -31,6 +31,7 @@ public class PlayerStats
         health += 5;
         mana += 10;
         fireRate += 0.01f;
+        level += 1;
     }
 
     public void GainXp(int newxp)

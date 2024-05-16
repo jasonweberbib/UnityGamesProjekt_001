@@ -32,6 +32,8 @@ public class Target : MonoBehaviour
            Instantiate(targetPrefab, new Vector3(x, y, 0), Quaternion.identity);
         // erhöung von scoreinnerhalb der Hub skript
            hub.score += 1;
+           Wizard p = Wizard.player;
+           p.stats.GainXp(1);
         // Targent wird zerstört
            Destroy(gameObject);
 

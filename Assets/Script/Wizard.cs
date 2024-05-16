@@ -40,14 +40,20 @@ public class Wizard : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text manaText;
 
+    // Referenc to PlayerStats
+    public PlayerStats stats;
 
+    // Makes Wizard to useble Player
+    public static Wizard player;
     
     
 
     // Start is called before the first frame update
     void Start()
     {
+        player = this;
         animator = GetComponent<Animator>();
+        stats = new PlayerStats();
     }
 
     // Update is called once per frame
