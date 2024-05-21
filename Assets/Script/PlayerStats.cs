@@ -21,17 +21,26 @@ public class PlayerStats
 
     public int xp = 0;
 
-    public float mana = 50f;
+    public int manaref = 50;
+    public int mana = 50;
 
-    public float manaReg = 5f;
+    public int manaReg = 5;
 
     public void LevelUp()
     {
-        canFire = canFire - 0.1f;
-        health += 5;
-        mana += 10;
+        health += 10;
+        mana += 5;
+        manaReg += 5;
         fireRate += 0.01f;
         level += 1;
+        if (level < 5)
+        {
+            canFire += 0.1f;
+        }
+        else
+        { 
+        
+        };
     }
 
     public void GainXp(int newxp)

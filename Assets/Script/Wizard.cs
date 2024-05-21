@@ -116,11 +116,15 @@ public class Wizard : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
         {
-            canFire = Time.time + fireRate;
-            GameObject obj = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-            obj.transform.Rotate(0, 0, fbRotate);
-            obj.GetComponent<Fireball>().direction = lastMovement;
-            animator.SetBool("Attack", true);
+            if (player.stats.mana >= 10)
+            {
+                canFire = Time.time + fireRate;
+                GameObject obj = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+                obj.transform.Rotate(0, 0, fbRotate);
+                obj.GetComponent<Fireball>().direction = lastMovement;
+                player.stats.mana -= 10;
+                animator.SetBool("Attack", true);
+            }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -138,6 +142,11 @@ public class Wizard : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+
+       // if(player.stats.mana < player.stats.manaref)
+        //{
+          //  player.stats.mana += 1 * Time.deltaTime;
+       // }
 
     }
 }
