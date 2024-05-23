@@ -143,10 +143,15 @@ public class Wizard : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
-       // if(player.stats.mana < player.stats.manaref)
-        //{
-          //  player.stats.mana += 1 * Time.deltaTime;
-       // }
+        if(player.stats.mana < player.stats.manaref)
+        {
+          player.stats.mana += 2 * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.K))
+        {
+            Application.Quit();
+        }
 
     }
 }

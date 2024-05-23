@@ -28,7 +28,7 @@ public class hub : MonoBehaviour
         Wizard player = Wizard.player;
         scoreText.text = "Score: " + score;
         healthText.text = "Health: " + player.stats.health;
-        manaText.text = "Mana: " + player.stats.mana;
+        manaText.text = "Mana: " + Mathf.RoundToInt(player.stats.mana);
         levelText.text = "Level: " + player.stats.level;
 
     }

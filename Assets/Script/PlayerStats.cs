@@ -21,15 +21,16 @@ public class PlayerStats
 
     public int xp = 0;
 
-    public int manaref = 50;
-    public int mana = 50;
+    public float manaref = 50f;
+    public float mana = 50f;
 
-    public int manaReg = 5;
+    public float manaReg = 5f;
 
     public void LevelUp()
     {
         health += 10;
         mana += 5;
+        manaref += 5;
         manaReg += 5;
         fireRate += 0.01f;
         level += 1;
