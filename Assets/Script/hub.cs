@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class hub : MonoBehaviour
 {
-    public static int score = 0;
+    //public static int score = 0;
 
     public TMP_Text scoreText;
     public TMP_Text healthText;
@@ -26,7 +26,7 @@ public class hub : MonoBehaviour
     void Update()
     {
         Wizard player = Wizard.player;
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + GameManager.score;
         healthText.text = "Health: " + player.stats.health;
         manaText.text = "Mana: " + Mathf.RoundToInt(player.stats.mana);
         levelText.text = "Level: " + player.stats.level;

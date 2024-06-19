@@ -12,22 +12,29 @@ public class GameManager : MonoBehaviour
     /// </summary>
 
     public string state = "";
+    public static int score = 0;
+
     public void startbutten()
     {
         SceneManager.LoadScene("game_01");
         state = "Game";
     }
 
+    public void NewGamebutten()
+    {
+
+    }
+
     public void quitbutten()
     {
         Application.Quit();
     }
-
     /// <summary>
     /// Back to Main Menu Timer
     /// </summary>
     /// 
     private float timer;
+
     private void Update()
     {
         timer =+ 1 * Time.deltaTime;
@@ -45,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void leDestroy()
     {
-        if(Instance != null)
+        if(Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);

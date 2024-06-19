@@ -31,7 +31,7 @@ public class Target : MonoBehaviour
            float y = Random.value * 10 - 5;
            Instantiate(targetPrefab, new Vector3(x, y, 0), Quaternion.identity);
         // erhöung von scoreinnerhalb der Hub skript
-           hub.score += 1;
+           GameManager.score += 1;
            Wizard p = Wizard.player;
            p.stats.GainXp(1);
         // Targent wird zerstört
