@@ -6,13 +6,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set;}
+    public GameObject pause;
+    public GameObject PausMenuObject;
+    public GameObject PlayMenuObject;
 
     /// <summary>
     /// MAIN MENU BUTTENS
     /// </summary>
 
-    public string state = "";
+    public string state = "Game";
+    public string canvisState = "Gameplay";
     public static int score = 0;
+
+    void Start()
+    {
+        PausMenuObject.SetActive(false);
+    }
 
     public void startbutten()
     {
@@ -47,7 +56,69 @@ public class GameManager : MonoBehaviour
                 timer = 0;
             }
         }
+
         
+
+
+
+
+
+        /*
+    if(Input.GetKeyDown(KeyCode.Escape)){
+        if  (pause.activeSelft){
+                pause.SetActive(false);
+            }else{
+                pause.SetActive(true);
+            };
+            //pause.SetActive(!pause.activeSelft);
+    }
+        */
+
+
+    }
+
+
+    public void KeyEscape()
+    {
+        /*
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (canvisState == "Gamaplay" && state == "Game")
+            {
+                Debug.Log("FUCK");
+                PausMenuObject.SetActive(true);
+                PlayMenuObject.SetActive(false);
+                Time.timeScale = 0f;
+                canvisState = "Pause";
+            }
+            else if (canvisState == "Pause" && state == "Game")
+            {
+                Debug.Log("FUCK1");
+                PausMenuObject.SetActive(false);
+                PlayMenuObject.SetActive(true);
+                Time.timeScale = 1f;
+                canvisState = "Gamaplay";
+            }
+        }
+        */
+
+        if (canvisState == "Gamaplay" && state == "Game")
+        {
+            Debug.Log("FUCK");
+            PausMenuObject.SetActive(true);
+            PlayMenuObject.SetActive(false);
+            Time.timeScale = 0f;
+            canvisState = "Pause";
+        }
+        else if (canvisState == "Pause" && state == "Game")
+        {
+            Debug.Log("FUCK1");
+            PausMenuObject.SetActive(false);
+            PlayMenuObject.SetActive(true);
+            Time.timeScale = 1f;
+            canvisState = "Gamaplay";
+        }
+
     }
 
     private void leDestroy()

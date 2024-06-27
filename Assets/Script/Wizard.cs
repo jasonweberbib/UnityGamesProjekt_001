@@ -45,6 +45,8 @@ public class Wizard : MonoBehaviour
 
     // Makes Wizard to useble Player
     public static Wizard player;
+
+    public GameObject GameManager; 
     
     
 
@@ -153,5 +155,9 @@ public class Wizard : MonoBehaviour
             Application.Quit();
         }
 
+        if(Input.GetKeyUp(KeyCode.Escape)) 
+        { 
+            //GameManager.
+        }
     }
 }
