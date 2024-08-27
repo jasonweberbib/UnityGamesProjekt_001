@@ -27,23 +27,23 @@ public class Wizard3dV2 : MonoBehaviour
 
         if (Input.GetKey("w"))
         {
-            movement = Vector3.forward;
+            movement += Vector3.forward;
         }
 
 
         if (Input.GetKey("s"))
         {
-            movement = Vector3.back;
+            movement += Vector3.back;
         }
 
         if (Input.GetKey("a"))
         {
-            movement = Vector3.left;
+            movement += Vector3.left;
         }
 
         if (Input.GetKey("d"))
         {
-            movement = Vector3.right;
+            movement += Vector3.right;
         }
 
         if ((movement.magnitude > 0))
@@ -51,11 +51,11 @@ public class Wizard3dV2 : MonoBehaviour
             lastDirection = movement;
         }
 
-        transform.position += movement.normalized * Time.deltaTime * 3;
+        transform.position += movement.normalized * Time.deltaTime * 4;
 
         if (Input.GetMouseButtonUp(0))
         {
-            GameObject obj = Instantiate(Fireball3D, transform.position + lastDirection, Quaternion.identity);
+            GameObject obj = Instantiate(Fireball3D, transform.position + lastDirection + Vector3.up, Quaternion.identity);
             obj.GetComponent<Fireball3D>().direction = lastDirection;
         }
     }
