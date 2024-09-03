@@ -6,6 +6,7 @@ public class Wizard3dV2 : MonoBehaviour
 {
     private Vector3 lastDirection;
     public GameObject Fireball3D;
+    public GameObject Iceball3D;
     public static GameObject player;
 
 
@@ -18,10 +19,10 @@ public class Wizard3dV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        Moving();
     }
 
-    public void Movement()
+    public void Moving()
     {
         Vector3 movement = Vector3.zero;
 
@@ -58,6 +59,29 @@ public class Wizard3dV2 : MonoBehaviour
             GameObject obj = Instantiate(Fireball3D, transform.position + lastDirection + Vector3.up, Quaternion.identity);
             obj.GetComponent<Fireball3D>().direction = lastDirection;
         }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            GameObject objice = Instantiate(Iceball3D, transform.position + lastDirection + Vector3.up, Quaternion.identity);
+            objice.GetComponent<Iceball3D>().direction = lastDirection;
+        }
+
+        if (movement.magnitude > 0)
+        {
+            lastDirection = movement.normalized;
+            transform.position += movement.normalized * Time.deltaTime * 3;
+            Rotate();
+        }
+
+    }
+    public void Rotate()
+    {
+        float angle = Vector3.Angle(lastDirection, Vector3.forward);
+        if (lastDirection.x < 0)
+        {
+            angle = angle * -1;
+        }
+        transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
 }
